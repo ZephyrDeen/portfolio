@@ -64,7 +64,7 @@ export function Resume() {
                 <p className="text-xs text-gray-500 bg-[#1a1a1a] px-3 py-1 rounded">2023 — 2025</p>
               </div>
               <p className="text-sm text-gray-300 leading-relaxed">
-                Specialized in software engineering with focus on full-stack development, cloud computing, and modern web technologies.
+              
               </p>
             </div>
           </div>

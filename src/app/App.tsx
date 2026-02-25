@@ -15,38 +15,51 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
 
           {/* Left Sidebar - Profile Card */}
-          <aside className="bg-[#1a1a1a] rounded-2xl p-6 h-fit sticky top-8">
-            {/* Profile Image */}
-            <div className="w-32 h-32 rounded-lg overflow-hidden mb-4 mx-auto">
-              <img
-                src="/zetphy_img.jpg"
-                alt="Zetphy Deng"
-                className="w-full h-full object-cover"
-              />
+          <aside className="bg-[#1a1a1a] rounded-2xl p-4 lg:p-6 h-fit lg:sticky lg:top-8">
+            {/* Top Section: Image + Name/Title + Social (mobile) */}
+            <div className="flex lg:block gap-4 items-center mb-4 lg:mb-0">
+              {/* Profile Image */}
+              <div className="w-20 h-20 lg:w-32 lg:h-32 rounded-2xl lg:rounded-lg overflow-hidden flex-shrink-0 lg:mb-4 lg:mx-auto">
+                <img
+                  src="/zetphy_img.jpg"
+                  alt="Zetphy Deng"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Name and Title */}
+              <div className="text-left lg:text-center flex-1 lg:mb-6">
+                <h2 className="text-lg lg:text-xl mb-1 italic">Zetphy Deng</h2>
+                <p className="text-xs lg:text-sm text-gray-400">Software Engineer</p>
+              </div>
+
+              {/* Social Media Icons (mobile only) */}
+              <div className="flex gap-2 lg:hidden">
+                <a href="https://www.linkedin.com/in/wenxin-zetphy-deng-07b3a830a/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#252525] rounded-lg hover:bg-[#333] transition-colors flex items-center justify-center">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://github.com/ZephyrDeen" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#252525] rounded-lg hover:bg-[#333] transition-colors flex items-center justify-center">
+                  <Github className="w-5 h-5" />
+                </a>
+              </div>
             </div>
 
-            {/* Name and Title */}
-            <div className="text-center mb-6">
-              <h2 className="text-xl mb-1 italic">Zetphy Deng</h2>
-              <p className="text-sm text-gray-400">Software Engineer</p>
-            </div>
-
-            <div className="w-full h-px bg-gray-700 mb-6"></div>
+            <div className="w-full h-px bg-gray-700 mb-4 lg:mb-6"></div>
 
             {/* Contact Info */}
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 lg:space-y-4 mb-4 lg:mb-6">
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
+                <Mail className="w-5 h-5 lg:w-4 lg:h-4 text-gray-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-500 uppercase mb-1">Email</p>
-                  <a href="mailto:de4rank@gmail.com" className="text-sm hover:text-white transition-colors">
+                  <a href="mailto:de4rank@gmail.com" className="text-sm hover:text-white transition-colors break-all">
                     de4rank@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 lg:w-4 lg:h-4 text-gray-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-500 uppercase mb-1">Location</p>
                   <p className="text-sm">Sydney, Australia</p>
@@ -54,10 +67,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="w-full h-px bg-gray-700 mb-6"></div>
+            <div className="w-full h-px bg-gray-700 mb-6 hidden lg:block"></div>
 
-            {/* Social Media */}
-            <div className="flex gap-3 justify-center flex-wrap">
+            {/* Social Media (desktop only) */}
+            <div className="hidden lg:flex gap-3 justify-center flex-wrap">
               <a href="https://www.linkedin.com/in/wenxin-zetphy-deng-07b3a830a/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#252525] rounded hover:bg-[#333] transition-colors flex items-center justify-center">
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -66,14 +79,14 @@ export default function App() {
               </a>
             </div>
 
-            <div className="w-full h-px bg-gray-700 my-6"></div>
+            <div className="w-full h-px bg-gray-700 my-6 hidden lg:block"></div>
 
             {/* Resume Button */}
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-cyan-500/50"
+              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium py-2.5 lg:py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-cyan-500/50 text-sm"
             >
               <Download className="w-4 h-4" />
               Download Resume
