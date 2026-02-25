@@ -41,3 +41,8 @@ coverage
 # Misc
 .vercel
 .netlify
+
+# Setup/Configuration Documentation (keep local only)
+ATTRIBUTIONS.md
+CONTACT_SETUP.md
+GALLERY_SETUP.md
