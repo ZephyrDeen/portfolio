@@ -10,7 +10,7 @@ interface PortfolioItem {
 export function Portfolio() {
   const portfolioItems: PortfolioItem[] = [
     {
-      liveUrl: 'https://note-five-mu.vercel.app/',
+      liveUrl: 'https://note-five-mu.vercel.app',
       githubUrl: 'github.com/ZephyrDeen/note',
       title: 'GeoNote - 3D Travel Journal',
       description: 'A spatial note-taking app that lets you pin your thoughts to locations on an interactive 3D globe.',

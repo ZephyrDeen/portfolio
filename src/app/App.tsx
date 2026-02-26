@@ -180,7 +180,7 @@ export default function App() {
                         {/* Links */}
                         <div className="flex flex-wrap gap-3 mb-3">
                           <a
-                            href="https://note-frontend-ashy.vercel.app"
+                            href="https://note-five-mu.vercel.app"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
