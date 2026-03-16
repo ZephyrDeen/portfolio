@@ -1,15 +1,18 @@
-import { Mail, MapPin, Instagram, Linkedin, Facebook, Youtube, Github, Sparkles, Briefcase, FileText, Download } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Sparkles, Briefcase, Download } from 'lucide-react';
 import { Resume } from './components/Resume';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { Gallery } from './components/Gallery';
 import { useState } from 'react';
+import { BrushCursor } from './components/BrushCursor';
+import { PaintText } from './components/PaintText';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<'about' | 'resume' | 'portfolio' | 'contact' | 'gallery'>('about');
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
+    <div className="brush-cursor-zone min-h-screen bg-[#0a0a0a] text-white flex flex-col">
+      <BrushCursor />
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12 flex-1 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
@@ -27,8 +30,8 @@ export default function App() {
 
             {/* Name and Title */}
             <div className="text-center mb-6">
-              <h2 className="text-xl mb-1 italic">Zetphy Deng</h2>
-              <p className="text-sm text-gray-400">Software Engineer</p>
+              <PaintText as="h2" className="text-xl mb-1 italic" text="Zetphy Deng" />
+              <PaintText as="p" className="text-sm text-gray-400" text="Software Engineer" />
             </div>
 
             <div className="w-full h-px bg-gray-700 mb-6"></div>
@@ -88,72 +91,71 @@ export default function App() {
                 onClick={() => setActiveSection('about')}
                 className={`hover:text-white transition-colors ${activeSection === 'about' ? 'text-white' : 'text-gray-400'}`}
               >
-                About
+                <PaintText text="About" />
               </button>
               <button
                 onClick={() => setActiveSection('resume')}
                 className={`hover:text-white transition-colors ${activeSection === 'resume' ? 'text-white' : 'text-gray-400'}`}
               >
-                Resume
+                <PaintText text="Resume" />
               </button>
               <button
                 onClick={() => setActiveSection('portfolio')}
                 className={`hover:text-white transition-colors ${activeSection === 'portfolio' ? 'text-white' : 'text-gray-400'}`}
               >
-                Portfolio
+                <PaintText text="Portfolio" />
               </button>
               <button
                 onClick={() => setActiveSection('contact')}
                 className={`hover:text-white transition-colors ${activeSection === 'contact' ? 'text-white' : 'text-gray-400'}`}
               >
-                Contact
+                <PaintText text="Contact" />
               </button>
               <button
                 onClick={() => setActiveSection('gallery')}
                 className={`hover:text-white transition-colors ${activeSection === 'gallery' ? 'text-white' : 'text-gray-400'}`}
               >
-                Gallery
+                <PaintText text="Gallery" />
               </button>
             </nav>
 
             {/* Digital Identity Section */}
             {activeSection === 'about' && (
               <section className="mb-12">
-                <h1 className="text-3xl md:text-4xl mb-2">Digital Identity</h1>
+                <PaintText as="h1" className="text-3xl md:text-4xl mb-2" text="Digital Identity" />
                 <div className="w-16 h-1 bg-white mb-6"></div>
 
                 <div className="space-y-4 text-gray-300 mb-10">
-                  <p>
-                    I'm Zetphy Deng, a Full-Stack Software Engineer based in Sydney, Australia. Passionate about building
-                    user-facing features with modern frameworks and backend services that power scalable applications.
-                  </p>
-                  <p>
-                    I hold a Master's degree in Information Technology from the University of New South Wales (UNSW).
-                    Currently working as a Software Engineer Intern at IMTG, where I build full-stack web platforms and
-                    integrate robust backend services. My passion for continuous learning drives me to stay up-to-date with
-                    the latest technologies and best practices in software development.
-                  </p>
+                  <PaintText as="p" text="Hi, I'm Zetphy." />
+                  <PaintText
+                    as="p"
+                    text="I'm a full-stack developer based in Sydney. I enjoy building web apps that are simple to use on the surface and solid under the hood."
+                  />
+                  <PaintText
+                    as="p"
+                    text="Lately I've been spending a lot of time exploring AI-powered applications - especially projects that combine LLMs with real products. Most of the time you'll find me building, experimenting with new tools, and trying to turn ideas into things people can actually use."
+                  />
                 </div>
 
                 {/* Highlights & Successes */}
                 <div className="mb-10">
                   <div className="flex items-center gap-2 mb-6">
                     <Sparkles className="w-5 h-5" />
-                    <h2 className="text-xl">Highlights & Successes</h2>
+                    <PaintText as="h2" className="text-xl" text="Highlights & Successes" />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-[#0a0a0a] p-6 rounded-lg">
-                      <div className="text-3xl md:text-4xl mb-2">2+</div>
-                      <div className="text-sm text-gray-400 uppercase tracking-wide">Years of Experience</div>
+                      <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="2+" />
+                      <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="Years of Experience" />
                     </div>
                     <div className="bg-[#0a0a0a] p-6 rounded-lg">
-                      <div className="text-3xl md:text-4xl mb-2">15+</div>
-                      <div className="text-sm text-gray-400 uppercase tracking-wide">RESTful APIs Built</div>
+                      <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="15+" />
+                      <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="RESTful APIs Built" />
                     </div>
                     <div className="bg-[#0a0a0a] p-6 rounded-lg">
-                      <div className="text-3xl md:text-4xl mb-2">3</div>
-                      <div className="text-sm text-gray-400 uppercase tracking-wide">Major Projects</div>
+                      <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="3" />
+                      <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="Major Projects" />
                     </div>
                   </div>
                 </div>
@@ -162,9 +164,9 @@ export default function App() {
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Briefcase className="w-5 h-5" />
-                    <h2 className="text-xl">Featured Portfolios</h2>
+                    <PaintText as="h2" className="text-xl" text="Featured Portfolios" />
                   </div>
-                  <p className="text-gray-400 text-sm mb-6">A glimpse into my professional journey</p>
+                  <PaintText as="p" className="text-gray-400 text-sm mb-6" text="A glimpse into my professional journey" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Portfolio Item 1 - Interview */}
@@ -192,10 +194,12 @@ export default function App() {
                             🌐 Live Demo
                           </a>
                         </div>
-                        <h3 className="text-lg mb-2">Interview - AI Interview Coach</h3>
-                        <p className="text-sm text-gray-400">
-                          An AI-powered interview practice app that helps users prepare with realistic mock interviews and coaching feedback.
-                        </p>
+                        <PaintText as="h3" className="text-lg mb-2" text="Interview - AI Interview Coach" />
+                        <PaintText
+                          as="p"
+                          className="text-sm text-gray-400"
+                          text="An AI-powered interview practice app that helps users prepare with realistic mock interviews and coaching feedback."
+                        />
                       </div>
                     </div>
 
@@ -232,10 +236,12 @@ export default function App() {
                             ⭐ GitHub
                           </a>
                         </div>
-                        <h3 className="text-lg mb-2">GeoNote - 3D Travel Journal</h3>
-                        <p className="text-sm text-gray-400">
-                          A spatial note-taking app that lets you pin your thoughts to locations on an interactive 3D globe.
-                        </p>
+                        <PaintText as="h3" className="text-lg mb-2" text="GeoNote - 3D Travel Journal" />
+                        <PaintText
+                          as="p"
+                          className="text-sm text-gray-400"
+                          text="A spatial note-taking app that lets you pin your thoughts to locations on an interactive 3D globe."
+                        />
                       </div>
                     </div>
                   </div>

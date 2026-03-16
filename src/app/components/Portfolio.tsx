@@ -1,3 +1,5 @@
+import { PaintText } from './PaintText';
+
 interface PortfolioItem {
   liveUrl?: string;
   githubUrl?: string;
@@ -35,7 +37,7 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" className="mb-12">
-      <h1 className="text-3xl md:text-4xl mb-2">Creative Showcase</h1>
+      <PaintText as="h1" className="text-3xl md:text-4xl mb-2" text="Creative Showcase" />
       <div className="w-16 h-1 bg-white mb-10"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -91,10 +93,8 @@ export function Portfolio() {
                 )}
               </div>
 
-              <h3 className="text-lg mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed mb-3">
-                {item.description}
-              </p>
+              <PaintText as="h3" className="text-lg mb-2" text={item.title} />
+              <PaintText as="p" className="text-sm text-gray-400 leading-relaxed mb-3" text={item.description} />
               <div className="flex flex-wrap gap-2">
                 {item.tech.map((tech, techIndex) => (
                   <span
