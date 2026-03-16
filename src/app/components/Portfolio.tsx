@@ -10,15 +10,22 @@ interface PortfolioItem {
 export function Portfolio() {
   const portfolioItems: PortfolioItem[] = [
     {
+      liveUrl: 'https://ai-interview-coach-app.vercel.app',
+      title: 'Interview - AI Interview Coach',
+      description: 'An AI-powered interview practice app that helps users prepare with realistic mock interviews and coaching feedback.',
+      image: '/interview.pic.jpg',
+      tech: ['React', 'Vercel', 'AI']
+    },
+    {
       liveUrl: 'https://note-five-mu.vercel.app',
-      githubUrl: 'github.com/ZephyrDeen/note',
+      githubUrl: 'https://github.com/ZephyrDeen/note',
       title: 'GeoNote - 3D Travel Journal',
       description: 'A spatial note-taking app that lets you pin your thoughts to locations on an interactive 3D globe.',
       image: '/geonote.jpg',
       tech: ['React', 'Three.js', 'Express.js', 'PostgreSQL', 'Prisma']
     },
     {
-      githubUrl: 'github.com/ZephyrDeen/RentWeb',
+      githubUrl: 'https://github.com/ZephyrDeen/RentWeb',
       title: 'RentWeb - Property Management System',
       description: 'A modern full-stack property management system with smart ticket management, Stripe payments, and dual-layer caching (React Query + Redis).',
       image: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
@@ -37,19 +44,34 @@ export function Portfolio() {
             key={index}
             className="bg-[#0a0a0a] rounded-lg overflow-hidden group hover:ring-2 hover:ring-gray-700 transition-all"
           >
-            <div className="aspect-video overflow-hidden bg-gray-900">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+            {item.liveUrl ? (
+              <a
+                href={item.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block aspect-video overflow-hidden bg-gray-900"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            ) : (
+              <div className="aspect-video overflow-hidden bg-gray-900">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            )}
             <div className="p-5">
               {/* Links */}
               <div className="flex flex-wrap gap-2 mb-3">
                 {item.liveUrl && (
                   <a
-                    href={`https://${item.liveUrl}`}
+                    href={item.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -59,7 +81,7 @@ export function Portfolio() {
                 )}
                 {item.githubUrl && (
                   <a
-                    href={`https://${item.githubUrl}`}
+                    href={item.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-white transition-colors"

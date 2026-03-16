@@ -152,7 +152,7 @@ export default function App() {
                       <div className="text-sm text-gray-400 uppercase tracking-wide">RESTful APIs Built</div>
                     </div>
                     <div className="bg-[#0a0a0a] p-6 rounded-lg">
-                      <div className="text-3xl md:text-4xl mb-2">3+</div>
+                      <div className="text-3xl md:text-4xl mb-2">3</div>
                       <div className="text-sm text-gray-400 uppercase tracking-wide">Major Projects</div>
                     </div>
                   </div>
@@ -167,17 +167,53 @@ export default function App() {
                   <p className="text-gray-400 text-sm mb-6">A glimpse into my professional journey</p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Portfolio Item 1 - GeoNote */}
+                    {/* Portfolio Item 1 - Interview */}
                     <div className="bg-[#0a0a0a] rounded-lg overflow-hidden group hover:ring-2 hover:ring-gray-700 transition-all">
-                      <div className="aspect-video overflow-hidden">
+                      <a
+                        href="https://ai-interview-coach-app.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block aspect-video overflow-hidden"
+                      >
+                        <img
+                          src="/interview.pic.jpg"
+                          alt="Interview AI Interview Coach"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </a>
+                      <div className="p-5">
+                        <div className="flex flex-wrap gap-3 mb-3">
+                          <a
+                            href="https://ai-interview-coach-app.vercel.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                          >
+                            🌐 Live Demo
+                          </a>
+                        </div>
+                        <h3 className="text-lg mb-2">Interview - AI Interview Coach</h3>
+                        <p className="text-sm text-gray-400">
+                          An AI-powered interview practice app that helps users prepare with realistic mock interviews and coaching feedback.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Portfolio Item 2 - GeoNote */}
+                    <div className="bg-[#0a0a0a] rounded-lg overflow-hidden group hover:ring-2 hover:ring-gray-700 transition-all">
+                      <a
+                        href="https://note-five-mu.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block aspect-video overflow-hidden"
+                      >
                         <img
                           src="/geonote.jpg"
                           alt="GeoNote 3D Travel Journal"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                      </div>
+                      </a>
                       <div className="p-5">
-                        {/* Links */}
                         <div className="flex flex-wrap gap-3 mb-3">
                           <a
                             href="https://note-five-mu.vercel.app"
@@ -199,24 +235,6 @@ export default function App() {
                         <h3 className="text-lg mb-2">GeoNote - 3D Travel Journal</h3>
                         <p className="text-sm text-gray-400">
                           A spatial note-taking app that lets you pin your thoughts to locations on an interactive 3D globe.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Portfolio Item 2 */}
-                    <div className="bg-[#0a0a0a] rounded-lg overflow-hidden group cursor-pointer hover:ring-2 hover:ring-gray-700 transition-all">
-                      <div className="aspect-video overflow-hidden">
-                        <img
-                          src="https://images.unsplash.com/photo-1555421689-d68471e189f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                          alt="RentWeb Property Management"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <p className="text-xs text-gray-500 uppercase mb-2">Full-Stack Project</p>
-                        <h3 className="text-lg mb-2">RentWeb - Property Management System</h3>
-                        <p className="text-sm text-gray-400">
-                          A secure multi-tenant platform with RBAC, real-time WebSocket communication, and 15+ RESTful APIs.
                         </p>
                       </div>
                     </div>
