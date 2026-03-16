@@ -200,8 +200,7 @@
     inset: 0;
     display: block;
     pointer-events: none;
-    transition:
-      opacity 160ms ease;
+    transition: opacity 160ms ease;
     will-change: opacity;
   }
 
@@ -247,6 +246,102 @@
     .brush-cursor-zone input,
     .brush-cursor-zone textarea {
       cursor: text !important;
+    }
+  }
+
+  /* Typewriter Effect */
+  .typewriter-cursor::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    color: currentColor;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Space Background */
+  .space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+  }
+
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle linear infinite;
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, transparent);
+    animation: shoot 3s ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes shoot {
+    0% {
+      opacity: 0;
+      transform: translateX(0) translateY(0);
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-500px) translateY(300px);
+    }
+  }
+
+  .nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(30px, -30px);
     }
   }
 }

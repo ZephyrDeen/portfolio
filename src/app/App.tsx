@@ -6,19 +6,22 @@ import { Gallery } from './components/Gallery';
 import { useState } from 'react';
 import { BrushCursor } from './components/BrushCursor';
 import { PaintText } from './components/PaintText';
+import { SpaceBackground } from './components/SpaceBackground';
+import { TypewriterText } from './components/TypewriterText';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<'about' | 'resume' | 'portfolio' | 'contact' | 'gallery'>('about');
 
   return (
-    <div className="brush-cursor-zone min-h-screen bg-[#0a0a0a] text-white flex flex-col">
+    <div className="brush-cursor-zone min-h-screen text-white flex flex-col relative">
+      <SpaceBackground />
       <BrushCursor />
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12 flex-1 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
 
           {/* Left Sidebar - Profile Card */}
-          <aside className="bg-[#1a1a1a] rounded-2xl p-6 h-fit sticky top-8">
+          <aside className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-6 h-fit sticky top-8 border border-white/10 shadow-2xl">
             {/* Profile Image */}
             <div className="w-32 h-32 rounded-lg overflow-hidden mb-4 mx-auto">
               <img
@@ -84,7 +87,7 @@ export default function App() {
           </aside>
 
           {/* Right Content Area */}
-          <main className="bg-[#1a1a1a] rounded-2xl p-6 md:p-8 lg:p-10">
+          <main className="bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl p-6 md:p-8 lg:p-10 border border-white/10 shadow-2xl">
             {/* Navigation */}
             <nav className="flex flex-wrap gap-6 mb-10 justify-end text-sm">
               <button
@@ -122,7 +125,16 @@ export default function App() {
             {/* Digital Identity Section */}
             {activeSection === 'about' && (
               <section className="mb-12">
-                <PaintText as="h1" className="text-3xl md:text-4xl mb-2" text="Digital Identity" />
+                <TypewriterText
+                  as="h1"
+                  className="text-3xl md:text-4xl mb-2"
+                  text="Digital Identity"
+                  speed={150}
+                  deleteSpeed={75}
+                  pauseTime={3000}
+                  showCursor={true}
+                  loop={true}
+                />
                 <div className="w-16 h-1 bg-white mb-6"></div>
 
                 <div className="space-y-4 text-gray-300 mb-10">
@@ -145,15 +157,15 @@ export default function App() {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-[#0a0a0a] p-6 rounded-lg">
+                    <div className="bg-[#0a0a0a]/60 backdrop-blur-sm p-6 rounded-lg border border-white/5">
                       <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="2+" />
                       <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="Years of Experience" />
                     </div>
-                    <div className="bg-[#0a0a0a] p-6 rounded-lg">
+                    <div className="bg-[#0a0a0a]/60 backdrop-blur-sm p-6 rounded-lg border border-white/5">
                       <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="15+" />
                       <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="RESTful APIs Built" />
                     </div>
-                    <div className="bg-[#0a0a0a] p-6 rounded-lg">
+                    <div className="bg-[#0a0a0a]/60 backdrop-blur-sm p-6 rounded-lg border border-white/5">
                       <PaintText as="div" className="text-3xl md:text-4xl mb-2" text="3" />
                       <PaintText as="div" className="text-sm text-gray-400 uppercase tracking-wide" text="Major Projects" />
                     </div>
@@ -170,7 +182,7 @@ export default function App() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Portfolio Item 1 - Interview */}
-                    <div className="bg-[#0a0a0a] rounded-lg overflow-hidden group hover:ring-2 hover:ring-gray-700 transition-all">
+                    <div className="bg-[#0a0a0a]/60 backdrop-blur-sm rounded-lg overflow-hidden group hover:ring-2 hover:ring-cyan-500/50 transition-all border border-white/5">
                       <a
                         href="https://ai-interview-coach-app.vercel.app"
                         target="_blank"
@@ -204,7 +216,7 @@ export default function App() {
                     </div>
 
                     {/* Portfolio Item 2 - GeoNote */}
-                    <div className="bg-[#0a0a0a] rounded-lg overflow-hidden group hover:ring-2 hover:ring-gray-700 transition-all">
+                    <div className="bg-[#0a0a0a]/60 backdrop-blur-sm rounded-lg overflow-hidden group hover:ring-2 hover:ring-cyan-500/50 transition-all border border-white/5">
                       <a
                         href="https://note-five-mu.vercel.app"
                         target="_blank"
