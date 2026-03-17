@@ -6,7 +6,7 @@ interface TypewriterTextProps {
   deleteSpeed?: number;
   pauseTime?: number;
   className?: string;
-  as?: 'h1' | 'h2' | 'h3' | 'p' | 'div';
+  as?: 'h1' | 'h2' | 'h3' | 'p' | 'div' | 'span';
   showCursor?: boolean;
   loop?: boolean;
 }

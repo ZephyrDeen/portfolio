@@ -125,16 +125,18 @@ export default function App() {
             {/* Digital Identity Section */}
             {activeSection === 'about' && (
               <section className="mb-12">
-                <TypewriterText
-                  as="h1"
-                  className="text-3xl md:text-4xl mb-2"
-                  text="Digital Identity"
-                  speed={150}
-                  deleteSpeed={75}
-                  pauseTime={3000}
-                  showCursor={true}
-                  loop={true}
-                />
+                <div className="text-3xl md:text-4xl mb-2">
+                  <TypewriterText
+                    as="span"
+                    className="inline-block bg-gradient-to-r from-cyan-400 via-blue-500 to-yellow-300 bg-clip-text text-transparent"
+                    text="Digital Identity"
+                    speed={150}
+                    deleteSpeed={75}
+                    pauseTime={3000}
+                    showCursor={true}
+                    loop={true}
+                  />
+                </div>
                 <div className="w-16 h-1 bg-white mb-6"></div>
 
                 <div className="space-y-4 text-gray-300 mb-10">
